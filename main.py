@@ -146,7 +146,7 @@ if __name__ == "__main__":
     matches = cross_match_papers(df, cleaned_names)
     today = date.today().strftime("%Y-%m-%d")
 
-    with open(f"matched_authors_and_papers-{today}.json", "w") as f:
+    with open(f"data/matched_authors_and_papers-{today}.json", "w") as f:
         json.dump(matches, f, indent=4)
 
     print(f"Data saved to matched_authors_and_papers-{today}.json")
