@@ -1,0 +1,32 @@
+name: Scrape ArXiv
+
+on:
+  schedule:
+   - cron:  '0 0 * * 0'
+  workflow_dispatch:
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@master
+      with:
+        submodules: 'true'
+    - name: Setup Python
+      uses: actions/setup-python@master
+      with:
+        python-version: 3.9
+    - name: scrape the arxiv
+      run: |
+        pip install -r requirements.txt
+        python main.py
+        
+    - run: git pull
+          
+    - name: Committing changes
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Add new data
