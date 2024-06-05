@@ -83,14 +83,24 @@ def scrape_papers(days):
     today = date.today()
 
     week_ago = today - datetime.timedelta(days=days)
+    
+    def _category(category):
 
-    scraper = arxivscraper.Scraper(
-        category="physics:astro-ph", date_from=week_ago.strftime("%Y-%m-%d"), date_until=today.strftime("%Y-%m-%d")
-    )
-    output = scraper.scrape()
+        scraper = arxivscraper.Scraper(
+            category=category, date_from=week_ago.strftime("%Y-%m-%d"), date_until=today.strftime("%Y-%m-%d")
+        )
+        output = scraper.scrape()
 
-    cols = ("id", "title", "categories", "abstract", "doi", "created", "updated", "authors", "affiliation", "url")
-    df = pd.DataFrame(output, columns=cols)
+        cols = ("id", "title", "categories", "abstract", "doi", "created", "updated", "authors", "affiliation", "url")
+
+        return pd.DataFrame(output, columns=cols)
+    
+    astroph = _category("physics:astro-ph")
+    grqc = _category("physics:gr-qc")
+
+    df = pd.concat([astroph, grqc], ignore_index=True)
+    df = df.drop_duplicates(subset='id')
+
     return df
 
 
