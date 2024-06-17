@@ -22,6 +22,7 @@ jobs:
     - name: scrape the arxiv
       run: |
         pip install -r requirements.txt
+        cd up_scraper
         python main.py
         
     - run: git pull
