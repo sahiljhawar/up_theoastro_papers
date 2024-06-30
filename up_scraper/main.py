@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 from datetime import date
 import datetime
 from name import permutate_name, load_names
+import logging
 
 def scrape_papers(days):
     """
@@ -78,9 +79,12 @@ def cross_match_papers(df, names):
 
 if __name__ == "__main__":
 
-    print("Scraping arxiv for papers...\n")
+    logging.basicConfig(format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S',level=logging.INFO)
+    logging.info("Scraping arxiv for papers...\n")
+    
     df = scrape_papers(7)
-    print("Cross matching names and papers")
+    print()
+    logging.info("Cross matching names and papers")
 
     cleaned_names = load_names()
 
@@ -90,5 +94,5 @@ if __name__ == "__main__":
     with open(f"../data/matched_authors_and_papers-{today}.json", "w") as f:
         json.dump(matches, f, indent=4)
 
-    print(f"Data saved to matched_authors_and_papers-{today}.json")
+    logging.info(f"Data saved to matched_authors_and_papers-{today}.json")
 
