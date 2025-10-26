@@ -1,0 +1,55 @@
+{
+    "tim dietrich": [
+        {
+            "title": "leveraging nrtidalv3 to develop gravitational waveform models with higher-order modes for binary neutron star systems"
+        },
+        {
+            "title": "simulating binary neutron star mergers with finite-temperature equations of state: the influences of the slope of the symmetry energy and artificial heating"
+        },
+        {
+            "title": "directional search for persistent gravitational waves: results from the first part of ligo-virgo-kagra's fourth observing run"
+        },
+        {
+            "title": "overlapping signals in next-generation gravitational wave observatories: a recipe for selecting the best parameter estimation technique"
+        },
+        {
+            "title": "numerical simulations of scalar dark matter around binary neutron star mergers"
+        }
+    ],
+    "anna puecher": [
+        {
+            "title": "leveraging nrtidalv3 to develop gravitational waveform models with higher-order modes for binary neutron star systems"
+        },
+        {
+            "title": "directional search for persistent gravitational waves: results from the first part of ligo-virgo-kagra's fourth observing run"
+        }
+    ],
+    "adrian abac": [
+        {
+            "title": "leveraging nrtidalv3 to develop gravitational waveform models with higher-order modes for binary neutron star systems"
+        }
+    ],
+    "rohan srikanth": [
+        {
+            "title": "numerical simulations of scalar dark matter around binary neutron star mergers"
+        }
+    ],
+    "maximiliano ujevic": [
+        {
+            "title": "simulating binary neutron star mergers with finite-temperature equations of state: the influences of the slope of the symmetry energy and artificial heating"
+        }
+    ],
+    "anuradha samajdar": [
+        {
+            "title": "directional search for persistent gravitational waves: results from the first part of ligo-virgo-kagra's fourth observing run"
+        },
+        {
+            "title": "overlapping signals in next-generation gravitational wave observatories: a recipe for selecting the best parameter estimation technique"
+        }
+    ],
+    "mattia emma": [
+        {
+            "title": "directional search for persistent gravitational waves: results from the first part of ligo-virgo-kagra's fourth observing run"
+        }
+    ]
+}
