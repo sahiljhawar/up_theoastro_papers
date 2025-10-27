@@ -1,3 +1,4 @@
+from pathlib import Path
 import arxivscraper
 import pandas as pd
 import requests
@@ -91,8 +92,10 @@ if __name__ == "__main__":
     matches = cross_match_papers(df, cleaned_names)
     today = date.today().strftime("%Y-%m-%d")
 
-    with open(f"../data/matched_authors_and_papers-{today}.json", "w") as f:
+    file = Path(f"../data/matched_authors_and_papers-{today}.json").resolve()
+
+    with open(file, "w") as f:
         json.dump(matches, f, indent=4)
 
-    logging.info(f"Data saved to matched_authors_and_papers-{today}.json")
+    logging.info(f"Data saved to {file}")
 
